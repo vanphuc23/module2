@@ -7,6 +7,8 @@
       <module fileurl="file://$PROJECT_DIR$/ss2_Loop/exercises/exercises.iml" filepath="$PROJECT_DIR$/ss2_Loop/exercises/exercises.iml" />
       <module fileurl="file://$PROJECT_DIR$/ss2_Loop/practice/practice.iml" filepath="$PROJECT_DIR$/ss2_Loop/practice/practice.iml" />
       <module fileurl="file://$PROJECT_DIR$/ss3_Array_và_Phương_thức_trong_java/practices/practices.iml" filepath="$PROJECT_DIR$/ss3_Array_và_Phương_thức_trong_java/practices/practices.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss1_Introduction_to_Java/ss1_Introduction_to_Java.iml" filepath="$PROJECT_DIR$/ss1_Introduction_to_Java/ss1_Introduction_to_Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss4_Class_and_Object_in_Java/ss4_Class_and_Object_in_Java.iml" filepath="$PROJECT_DIR$/ss4_Class_and_Object_in_Java/ss4_Class_and_Object_in_Java.iml" />
       <module fileurl="file://$PROJECT_DIR$/untitled/untitled.iml" filepath="$PROJECT_DIR$/untitled/untitled.iml" />
     </modules>
   </component>

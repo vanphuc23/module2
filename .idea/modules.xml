@@ -3,12 +3,18 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Codegym module2.iml" filepath="$PROJECT_DIR$/.idea/Codegym module2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DS/DS.iml" filepath="$PROJECT_DIR$/DS/DS.iml" />
       <module fileurl="file://$PROJECT_DIR$/ss3_Array_và_Phương_thức_trong_java/exercise/exercise.iml" filepath="$PROJECT_DIR$/ss3_Array_và_Phương_thức_trong_java/exercise/exercise.iml" />
       <module fileurl="file://$PROJECT_DIR$/ss2_Loop/exercises/exercises.iml" filepath="$PROJECT_DIR$/ss2_Loop/exercises/exercises.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mvc_model/mvc_model.iml" filepath="$PROJECT_DIR$/mvc_model/mvc_model.iml" />
       <module fileurl="file://$PROJECT_DIR$/ss2_Loop/practice/practice.iml" filepath="$PROJECT_DIR$/ss2_Loop/practice/practice.iml" />
       <module fileurl="file://$PROJECT_DIR$/ss3_Array_và_Phương_thức_trong_java/practices/practices.iml" filepath="$PROJECT_DIR$/ss3_Array_và_Phương_thức_trong_java/practices/practices.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss10_DSA_Danh_sach/ss10_DSA_Danh_sach.iml" filepath="$PROJECT_DIR$/ss10_DSA_Danh_sach/ss10_DSA_Danh_sach.iml" />
       <module fileurl="file://$PROJECT_DIR$/ss1_Introduction_to_Java/ss1_Introduction_to_Java.iml" filepath="$PROJECT_DIR$/ss1_Introduction_to_Java/ss1_Introduction_to_Java.iml" />
       <module fileurl="file://$PROJECT_DIR$/ss4_Class_and_Object_in_Java/ss4_Class_and_Object_in_Java.iml" filepath="$PROJECT_DIR$/ss4_Class_and_Object_in_Java/ss4_Class_and_Object_in_Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss5_Access modifier_static method_static property/ss5_Access modifier_static method_static property.iml" filepath="$PROJECT_DIR$/ss5_Access modifier_static method_static property/ss5_Access modifier_static method_static property.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss6_Ke_thua/ss6_Ke_thua.iml" filepath="$PROJECT_DIR$/ss6_Ke_thua/ss6_Ke_thua.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss7_Abstract_Class_&amp;_Interface/ss7_Abstract_Class_&amp;_Interface.iml" filepath="$PROJECT_DIR$/ss7_Abstract_Class_&amp;_Interface/ss7_Abstract_Class_&amp;_Interface.iml" />
       <module fileurl="file://$PROJECT_DIR$/untitled/untitled.iml" filepath="$PROJECT_DIR$/untitled/untitled.iml" />
     </modules>
   </component>

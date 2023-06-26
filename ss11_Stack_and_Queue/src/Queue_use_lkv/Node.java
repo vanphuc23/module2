@@ -1,2 +1,11 @@
-package Queue_use_lkv;public class Node {
+package Queue_use_lkv;
+
+public class Node {
+    public int data;
+    public Node link;
+
+    public Node(int data) {
+        this.data = data;
+        this.link=null;
+    }
 }

@@ -17,7 +17,6 @@ public class StudentService implements IStudentService {
             System.out.printf("Thông tin sinh viên thứ %d:\n", i + 1);
             System.out.println(students[i]);
         }
-        System.out.println(iStudentRepository.getSize());
     }
 
     public Student[] add() {
@@ -67,12 +66,14 @@ public class StudentService implements IStudentService {
         Student[] students = iStudentRepository.findAll();
         System.out.println("Bạn muốn xóa học sinh ở vị trí thứ: ");
         int number = Integer.parseInt(scanner.nextLine());
-        for (int i = 0; i < students.length; i++) {
-            if ((i + 1) == number) {
-                students[i] = null;
-                iStudentRepository.downSize();
+        if(number<=iStudentRepository.getSize()) {
+            for (int i = 0; i < students.length; i++) {
+                if ((i + 1) == number) {
+                    students[i] = null;
+                    iStudentRepository.downSize();
+                }
             }
+            iStudentRepository.deleteStudent();
         }
-        iStudentRepository.deleteStudent();
     }
 }

@@ -36,7 +36,9 @@ public class StudentController {
                 case 4:
                     System.out.println("Bạn đang chọn chức năng Xóa");
                     iStudentService.delete();
+                case 5:
+                    System.exit(0);
             }
-        } while (choose >= 1 && choose <= 4);
+        } while (choose >= 1 && choose <= 5);
     }
 }

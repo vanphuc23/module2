@@ -2,14 +2,25 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/CaseStudy_2_1/CaseStudy_2_1.iml" filepath="$PROJECT_DIR$/CaseStudy_2_1/CaseStudy_2_1.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Codegym module2.iml" filepath="$PROJECT_DIR$/.idea/Codegym module2.iml" />
       <module fileurl="file://$PROJECT_DIR$/DS/DS.iml" filepath="$PROJECT_DIR$/DS/DS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Doc_File_CSV/Doc_File_CSV.iml" filepath="$PROJECT_DIR$/Doc_File_CSV/Doc_File_CSV.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Quan_ly_khach_san/Quan_ly_khach_san.iml" filepath="$PROJECT_DIR$/Quan_ly_khach_san/Quan_ly_khach_san.iml" />
+      <module fileurl="file://$PROJECT_DIR$/__CaseStudy/__CaseStudy.iml" filepath="$PROJECT_DIR$/__CaseStudy/__CaseStudy.iml" />
       <module fileurl="file://$PROJECT_DIR$/ss3_Array_và_Phương_thức_trong_java/exercise/exercise.iml" filepath="$PROJECT_DIR$/ss3_Array_và_Phương_thức_trong_java/exercise/exercise.iml" />
       <module fileurl="file://$PROJECT_DIR$/ss2_Loop/exercises/exercises.iml" filepath="$PROJECT_DIR$/ss2_Loop/exercises/exercises.iml" />
       <module fileurl="file://$PROJECT_DIR$/mvc_model/mvc_model.iml" filepath="$PROJECT_DIR$/mvc_model/mvc_model.iml" />
       <module fileurl="file://$PROJECT_DIR$/ss2_Loop/practice/practice.iml" filepath="$PROJECT_DIR$/ss2_Loop/practice/practice.iml" />
       <module fileurl="file://$PROJECT_DIR$/ss3_Array_và_Phương_thức_trong_java/practices/practices.iml" filepath="$PROJECT_DIR$/ss3_Array_và_Phương_thức_trong_java/practices/practices.iml" />
       <module fileurl="file://$PROJECT_DIR$/ss10_DSA_Danh_sach/ss10_DSA_Danh_sach.iml" filepath="$PROJECT_DIR$/ss10_DSA_Danh_sach/ss10_DSA_Danh_sach.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss11_Stack_and_Queue/ss11_Stack_and_Queue.iml" filepath="$PROJECT_DIR$/ss11_Stack_and_Queue/ss11_Stack_and_Queue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss12_Java_Collection_Framework/ss12_Java_Collection_Framework.iml" filepath="$PROJECT_DIR$/ss12_Java_Collection_Framework/ss12_Java_Collection_Framework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss12_LinkedList/ss12_LinkedList.iml" filepath="$PROJECT_DIR$/ss12_LinkedList/ss12_LinkedList.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss13_Thuat_toan_tim_kiem/ss13_Thuat_toan_tim_kiem.iml" filepath="$PROJECT_DIR$/ss13_Thuat_toan_tim_kiem/ss13_Thuat_toan_tim_kiem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss14_Thuat_toan_sap_xep/ss14_Thuat_toan_sap_xep.iml" filepath="$PROJECT_DIR$/ss14_Thuat_toan_sap_xep/ss14_Thuat_toan_sap_xep.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss15_Xu_li_ngoai_le_&amp;_Debug/ss15_Xu_li_ngoai_le_&amp;_Debug.iml" filepath="$PROJECT_DIR$/ss15_Xu_li_ngoai_le_&amp;_Debug/ss15_Xu_li_ngoai_le_&amp;_Debug.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss16_IO_Text_File/ss16_IO_Text_File.iml" filepath="$PROJECT_DIR$/ss16_IO_Text_File/ss16_IO_Text_File.iml" />
       <module fileurl="file://$PROJECT_DIR$/ss1_Introduction_to_Java/ss1_Introduction_to_Java.iml" filepath="$PROJECT_DIR$/ss1_Introduction_to_Java/ss1_Introduction_to_Java.iml" />
       <module fileurl="file://$PROJECT_DIR$/ss4_Class_and_Object_in_Java/ss4_Class_and_Object_in_Java.iml" filepath="$PROJECT_DIR$/ss4_Class_and_Object_in_Java/ss4_Class_and_Object_in_Java.iml" />
       <module fileurl="file://$PROJECT_DIR$/ss5_Access modifier_static method_static property/ss5_Access modifier_static method_static property.iml" filepath="$PROJECT_DIR$/ss5_Access modifier_static method_static property/ss5_Access modifier_static method_static property.iml" />

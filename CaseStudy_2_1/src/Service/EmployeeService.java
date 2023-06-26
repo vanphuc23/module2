@@ -14,7 +14,6 @@ import java.util.Date;
 import java.util.regex.Pattern;
 
 public class EmployeeService implements IEmployeeService {
-    
     static Scanner scanner = new Scanner(System.in);
     static IEmployeeReposity employeereposity = new EmployeeReposity();
     static ArrayList<Employee> employee = employeereposity.findAll();
@@ -41,7 +40,7 @@ public class EmployeeService implements IEmployeeService {
         double salarynew = Double.parseDouble(scanner.nextLine());
         Employee employeenew = new Employee(employeereposity.getSize() + 1, nameIn, strDate1, gender1, CMND, SDT1, email1, VT, hv, salarynew);
         employee.add(employeenew);
-        ArrayList<Employee> employeeadd = employeereposity.readFromFile(employee, path);
+        ArrayList<Employee> employeeadd = employeereposity.readFromFile(employee);
         for (Employee ch : employeeadd) {
             System.out.println(ch);
         }

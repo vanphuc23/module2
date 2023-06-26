@@ -9,7 +9,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class EmployeeWriteFile {
-    public static ArrayList<Employee>WriteFile(ArrayList<Employee> employees, String path){
+    private static final String path= "D:\\Codegym\\Codegym module2\\CaseStudy_2_1\\src\\data\\Employee.csv";
+    public static ArrayList<Employee>WriteFile(ArrayList<Employee> employees){
         File file = new File(path);
         try {
             FileWriter reader = new FileWriter(file, false);

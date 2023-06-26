@@ -17,8 +17,8 @@ public class EmployeeReposity implements IEmployeeReposity {
         return size;
     }
     @Override
-    public ArrayList<Employee> readFromFile(ArrayList<Employee>demo, String path) {
-        return EmployeeWriteFile.WriteFile(demo,path);
+    public ArrayList<Employee> readFromFile(ArrayList<Employee>demo) {
+        return EmployeeWriteFile.WriteFile(demo);
     }
 
 }

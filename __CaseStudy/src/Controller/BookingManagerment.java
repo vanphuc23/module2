@@ -24,6 +24,7 @@ public class BookingManagerment {
                     iBookingService.addBooking();
                     break;
                 case 2:
+                    iBookingService.show();
                     break;
                 case 3:
                     break;

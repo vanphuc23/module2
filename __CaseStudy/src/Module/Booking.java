@@ -3,7 +3,7 @@ package Module;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class Booking {
+public class Booking implements Comparable<Booking> {
     private int idCustomer;
     private LocalDate start;
     private LocalDate end;
@@ -54,6 +54,21 @@ public class Booking {
     @Override
     public String toString() {
         DateTimeFormatter formatter=DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        return this.idCustomer+", "+formatter.format(this.start)+", "+formatter.format(this.end)+", "+this.idService;
+        return this.idCustomer + ", " + formatter.format(this.start) + ", " + formatter.format(this.end) + ", " + this.idService;
+    }
+
+    @Override
+    public int compareTo(Booking o) {
+        if(this.getStart().equals(o.getStart())) {
+            if(this.getEnd().isAfter(o.getEnd())) {
+                return 1;
+            } else {
+                return -1;
+            }
+        } else if(this.getStart().isAfter(o.getStart())) {
+            return -1;
+        } else {
+            return 1;
+        }
     }
 }

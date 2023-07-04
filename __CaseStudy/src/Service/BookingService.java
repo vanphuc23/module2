@@ -22,14 +22,28 @@ public class BookingService implements IBookingService {
     public void addBooking() {
         int idCustomer = IDCUSTOMER();
         String idService = IDSERVICE();
-        LocalDate start = birthday();
-        System.out.println(start);
-        LocalDate end = birthday();
-        System.out.println(end);
+        LocalDate start;
+        LocalDate end;
+        boolean right=true;
+        do {
+            start=birthday();
+            end=birthday();
+            if(end.isAfter(start)) {
+                right=false;
+            }
+        } while (right);
         Booking b = new Booking(idCustomer, start, end, idService);
         TreeSet<Booking> booking = bookings;
         booking.add(b);
         iBookingRepository.write(booking);
+    }
+    @Override
+    public void show() {
+        DateTimeFormatter formatter=DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        for (Booking b: bookings
+             ) {
+            System.out.println("Mã khách hàng: "+b.getIdCustomer()+", "+"Ngày bắt đầu: "+formatter.format(b.getStart())+", "+"Ngày kết thúc: "+formatter.format(b.getEnd())+", "+"Tên dịch vụ: "+b.getIdService());
+        }
     }
 
     private LocalDate birthday() {

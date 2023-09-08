@@ -12,11 +12,13 @@ public class BookingService implements IBookingService {
     private ICustomerRepository customers = new CustomerRepository();
     private ArrayList<Customer> customerList = customers.findAll();
     private IFacilityRepository iFacilityRepository = new FacilityRepository();
+    private IConstractRepository iConstractRepository = new ConstractRepository();
     private LinkedHashMap<Villa, Integer> villaLinked = iFacilityRepository.displayVilla();
     private LinkedHashMap<House, Integer> houseLinked = iFacilityRepository.displayHouse();
     private LinkedHashMap<Room1, Integer> roomLinked = iFacilityRepository.displayRoom();
     private IBookingRepository iBookingRepository = new BookingRepository();
     private TreeSet<Booking> bookings = iBookingRepository.display();
+    private Queue<Constract> queue = iConstractRepository.findAll();
 
     @Override
     public void addBooking() {
@@ -24,12 +26,12 @@ public class BookingService implements IBookingService {
         String idService = IDSERVICE();
         LocalDate start;
         LocalDate end;
-        boolean right=true;
+        boolean right = true;
         do {
-            start=birthday();
-            end=birthday();
-            if(end.isAfter(start)) {
-                right=false;
+            start = birthday();
+            end = birthday();
+            if (end.isAfter(start)) {
+                right = false;
             }
         } while (right);
         Booking b = new Booking(idCustomer, start, end, idService);
@@ -37,13 +39,54 @@ public class BookingService implements IBookingService {
         booking.add(b);
         iBookingRepository.write(booking);
     }
+
     @Override
     public void show() {
-        DateTimeFormatter formatter=DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        for (Booking b: bookings
-             ) {
-            System.out.println("Mã khách hàng: "+b.getIdCustomer()+", "+"Ngày bắt đầu: "+formatter.format(b.getStart())+", "+"Ngày kết thúc: "+formatter.format(b.getEnd())+", "+"Tên dịch vụ: "+b.getIdService());
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        for (Booking b : bookings
+        ) {
+            System.out.println("Mã khách hàng: " + b.getIdCustomer() + ", " + "Ngày bắt đầu: " + formatter.format(b.getStart()) + ", " + "Ngày kết thúc: " + formatter.format(b.getEnd()) + ", " + "Tên dịch vụ: " + b.getIdService());
         }
+    }
+
+    @Override
+    public void createConstract() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        Constract c = new Constract(queue.size() + 1, bookings.last().getIdCustomer(), bookings.last().getStart(), bookings.last().getEnd(), bookings.last().getIdService());
+        queue.add(c);
+        Booking booking = new Booking(bookings.last().getIdCustomer(), bookings.last().getStart(), bookings.last().getEnd(), bookings.last().getIdService());
+        TreeSet<Booking> treeSet = bookings;
+        treeSet.pollLast();
+        iBookingRepository.write(treeSet);
+        System.out.println("========HỢP ĐỒNG========");
+        System.out.println("Mã hợp đồng: " + c.getIdConstract() + ", " + "Mã khách hàng: " + c.getIdCustomer() + ", " + "Ngày bắt đầu: " + formatter.format(c.getStartDB()) + ", " + "Ngày kết thúc: " + formatter.format(c.getEndDB()) + ", " + "Tên dịch vụ: " + c.getIdService());
+        iConstractRepository.write(queue);
+    }
+
+    @Override
+    public void displayConstracts() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        System.out.println("==========DANH SÁCH HỢP ĐỒNG==========");
+        for (Constract c : queue
+        ) {
+            System.out.println("Mã hợp đồng: " + c.getIdConstract() + ", " + "Mã khách hàng: " + c.getIdCustomer() + ", " + "Ngày bắt đầu: " + formatter.format(c.getStartDB()) + ", " + "Ngày kết thúc: " + formatter.format(c.getEndDB()) + ", " + "Tên dịch vụ: " + c.getIdService());
+        }
+    }
+
+    @Override
+    public void editConstract() {
+        displayConstracts();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        System.out.println("Nhập mã hợp đồng muốn sửa:");
+        int id = Integer.parseInt(scanner.nextLine());
+        for (Constract c : queue) {
+            if (id == c.getIdConstract()) {
+                System.out.println("===Mã hợp đồng sửa===");
+                System.out.println("Mã hợp đồng: " + c.getIdConstract() + ", " + "Mã khách hàng: " + c.getIdCustomer() + ", " + "Ngày bắt đầu: " + formatter.format(c.getStartDB()) + ", " + "Ngày kết thúc: " + formatter.format(c.getEndDB()) + ", " + "Tên dịch vụ: " + c.getIdService());
+                EDIT(c);
+            }
+        }
+        iConstractRepository.write(queue);
     }
 
     private LocalDate birthday() {
@@ -310,6 +353,73 @@ public class BookingService implements IBookingService {
             } else {
 
                 return choose;
+            }
+        }
+    }
+
+    private void EDIT(Constract c) {
+        int choose;
+        do {
+            System.out.println("===Chọn thông tin muốn sửa===");
+            System.out.println("1. Mã khách hàng");
+            System.out.println("2. Ngày bắt đầu");
+            System.out.println("3. Ngày kết thúc");
+            System.out.println("4. Mã dịch vụ");
+            System.out.println("5. Exit");
+            System.out.println("Chọn thông tin muốn sửa");
+            choose = CHOOSE();
+            switch (choose) {
+                case 1:
+                    int idCustomer;
+                    System.out.println("Nhập mã khách hàng mới:");
+                    idCustomer = CHOOSE();
+                    c.setIdCustomer(idCustomer);
+                    break;
+                case 2:
+                    LocalDate start;
+                    System.out.println("Nhập ngày bắt đầu mới:");
+                    boolean right = true;
+                    do {
+                        start = birthday();
+                        if (c.getEndDB().isAfter(start)) {
+                            right = false;
+                        } else {
+                            System.out.println("Ngày bắt đầu phải trước ngày kết thúc!!!");
+                        }
+                    } while (right);
+                    c.setStartDB(start);
+                    break;
+                case 3:
+                    LocalDate end;
+                    System.out.println("Nhập ngày kết thúc mới:");
+                    boolean RIGHT = true;
+                    do {
+                        end = birthday();
+                        if (c.getStartDB().isBefore(end)) {
+                            RIGHT = false;
+                        } else {
+                            System.out.println("Ngày kết thúc phải sau ngày bắt đầu!!!");
+                        }
+                    } while (RIGHT);
+                    c.setEndDB(end);
+                    break;
+                case 4:
+                    System.out.println("Nhập mã dịch vụ mới:");
+                    String idService = IDSERVICE();
+                    c.setIdService(idService);
+                    break;
+            }
+        } while (choose >= 1 && choose <= 4);
+    }
+
+    private int CHOOSE() {
+        int c;
+        while (true) {
+            try {
+                c = Integer.parseInt(scanner.nextLine());
+                return c;
+            } catch (NumberFormatException e) {
+                System.out.println("Nhập sai định dạng!!!Vui lòng nhập lại");
             }
         }
     }

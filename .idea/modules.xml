@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CaseStudy_2_1/CaseStudy_2_1.iml" filepath="$PROJECT_DIR$/CaseStudy_2_1/CaseStudy_2_1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CaseStudy_QLDB/CaseStudy_QLDB.iml" filepath="$PROJECT_DIR$/CaseStudy_QLDB/CaseStudy_QLDB.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CaseStudy_thi/CaseStudy_thi.iml" filepath="$PROJECT_DIR$/CaseStudy_thi/CaseStudy_thi.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Codegym module2.iml" filepath="$PROJECT_DIR$/.idea/Codegym module2.iml" />
       <module fileurl="file://$PROJECT_DIR$/DS/DS.iml" filepath="$PROJECT_DIR$/DS/DS.iml" />
       <module fileurl="file://$PROJECT_DIR$/Doc_File_CSV/Doc_File_CSV.iml" filepath="$PROJECT_DIR$/Doc_File_CSV/Doc_File_CSV.iml" />

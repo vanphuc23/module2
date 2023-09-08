@@ -3,6 +3,7 @@ package Service;
 import Module.Employee;
 import Repository.EmployeeRepository;
 import Repository.IEmployeeRepository;
+import Exception.NotFoundEmployeeException;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -462,19 +463,28 @@ public class EmployeeService implements IEmployeeService {
     }
 
     @Override
-    public void searchEmployee() {
-        int searchId = searchId();
-        int index = -1;
-        for (int i = 0; i < employeeList.size(); i++) {
-            if (employeeList.get(i).getEmployeeCode() == searchId) {
-                index = i;
+    public void searchEmployee() throws NotFoundEmployeeException {
+        boolean right = true;
+        do {
+            int searchId = searchId();
+            int index = -1;
+            try {
+                for (int i = 0; i < employeeList.size(); i++) {
+                    if (employeeList.get(i).getEmployeeCode() == searchId) {
+                        index = i;
+                        right = false;
+                    }
+                }
+                checkId(index);
+            } catch (NotFoundEmployeeException n) {
+                System.out.println(n.getMessage());
             }
-        }
-        if (index == -1) {
-            System.out.println("Mã nhân viên không tồn tại!!!");
-            return;
-        }
-        System.out.println(employeeList.get(index).toString());
+        } while (right);
+//        if (index == -1) {
+//            System.out.println("Mã nhân viên không tồn tại!!!");
+//        } else {
+//            System.out.println(employeeList.get(index).toString());
+//        }
     }
 
     private int searchId() {
@@ -486,6 +496,16 @@ public class EmployeeService implements IEmployeeService {
             } catch (Exception e) {
                 System.out.println("Nhập sai phông chữ!!! Xin vui lòng nhập lại");
             }
+        }
+    }
+
+    private void checkId(int id) throws NotFoundEmployeeException {
+        if (id == -1) {
+            throw new NotFoundEmployeeException("Mã nhân viên không tồn tại!!! Nhập lại\n" +
+                    "==========================================");
+
+        } else {
+            System.out.println(employeeList.get(id).toString());
         }
     }
 }

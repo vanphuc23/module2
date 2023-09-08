@@ -2,13 +2,14 @@ package Controller;
 
 import Service.EmployeeService;
 import Service.IEmployeeService;
+import Exception.NotFoundEmployeeException;
 
 import java.util.Scanner;
 
 public class EmployeeManagement {
     Scanner scanner = new Scanner(System.in);
     private IEmployeeService iEmployeeService=new EmployeeService();
-    public void display() {
+    public void display() throws NotFoundEmployeeException {
         int choose;
         do {
             System.out.println("========== Menu ==========");

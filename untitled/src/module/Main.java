@@ -3,13 +3,16 @@ package module;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.TreeSet;
 
 public class Main {
     private static final String PATH="D:\\Codegym\\Codegym module2\\untitled\\src\\module\\abc.csv";
     public static void main(String[] args) {
-        readFile();
+        TreeSet<Abc> treeSet=readFile();
+        treeSet.pollLast();
+        writeFile(treeSet);
     }
-    private static void writeFile(ArrayList<Abc> a) {
+    private static void writeFile(TreeSet<Abc> a) {
         File file=new File(PATH);
         try {
             BufferedWriter bufferedWriter=new BufferedWriter(new FileWriter(file,false));
@@ -23,22 +26,19 @@ public class Main {
             e.printStackTrace();
         }
     }
-    private static ArrayList<Abc> readFile() {
+    private static TreeSet<Abc> readFile() {
         File file=new File(PATH);
-        ArrayList<Abc> a =new ArrayList<>();
+        TreeSet<Abc> a =new TreeSet<>();
         try {
             BufferedReader bufferedReader=new BufferedReader(new FileReader(file));
             String line;
-            Abc b=new Abc();
+            Abc b;
             String[] strings;
             while ((line= bufferedReader.readLine())!=null) {
                 if(!line.isEmpty()) {
                     strings = line.split(",");
-                    b.setUse(Integer.parseInt(strings[0])+1);
-                    if(b.getUse()>5) {
-                        System.out.println("BẢO TRÌ");
-                        b.setUse(5);
-                    }
+                    b=new Abc();
+                    b.setUse(Integer.parseInt(strings[0]));
                     a.add(b);
                 }
             }

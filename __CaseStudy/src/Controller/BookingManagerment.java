@@ -27,10 +27,13 @@ public class BookingManagerment {
                     iBookingService.show();
                     break;
                 case 3:
+                    iBookingService.createConstract();
                     break;
                 case 4:
+                    iBookingService.displayConstracts();
                     break;
                 case 5:
+                    iBookingService.editConstract();
                     break;
             }
         } while (choose >= 1 && choose <= 5);

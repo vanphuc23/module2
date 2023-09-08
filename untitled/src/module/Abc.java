@@ -1,6 +1,6 @@
 package module;
 
-public class Abc {
+public class Abc implements Comparable<Abc>{
     private int use;
 
     public Abc() {
@@ -24,6 +24,11 @@ public class Abc {
 
     @Override
     public String toString() {
-        return this.use+","+",";
+        return this.use+",";
+    }
+
+    @Override
+    public int compareTo(Abc o) {
+        return this.getUse()-o.getUse();
     }
 }

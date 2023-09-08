@@ -3,6 +3,7 @@ package Service;
 import Module.Employee;
 
 import java.util.ArrayList;
+import Exception.NotFoundEmployeeException;
 
 public interface IEmployeeService {
     void display();
@@ -13,5 +14,5 @@ public interface IEmployeeService {
 
     void deleteEmployee();
 
-    void searchEmployee();
+    void searchEmployee() throws NotFoundEmployeeException;
 }

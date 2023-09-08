@@ -1,11 +1,12 @@
 package Controller;
 
 import java.util.Scanner;
+import Exception.NotFoundEmployeeException;
 
 public class FuramaController {
     Scanner scanner = new Scanner(System.in);
 
-    public void displayMainMenu() {
+    public void displayMainMenu() throws NotFoundEmployeeException {
         int choose;
         do {
             System.out.println("========== Menu ==========");
